@@ -9,7 +9,7 @@ class todogui(QMainWindow):
     res=[]
     def __init__(self):
         super(todogui, self).__init__()
-        uic.loadUi("todo2.ui", self)
+        uic.loadUi("todoFinal.ui", self)
         self.show()
 
         self.add_task.clicked.connect(self.add)
