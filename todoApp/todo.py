@@ -20,12 +20,24 @@ class todogui(QMainWindow):
     tasks=[]
     res=[]
     mode = "normal"
-    
+    string=""
     def __init__(self):
         super(todogui, self).__init__()
         uic.loadUi("todoFinal.ui", self)
         self.show()
         # set placeholder text in Input
+    
+        f = open("todo.txt","r")
+        f.seek(0)
+        self.string=f.read()
+        if not self.string:
+            pass
+        else:
+
+            self.tasks = self.string.split(".")
+            self.update_list()
+
+        
         self.update_task.setDisabled(True)
         self.remove_task.setDisabled(True)
         self.task_input.setPlaceholderText("Create a task")
@@ -38,9 +50,28 @@ class todogui(QMainWindow):
         self.remove_task.clicked.connect(self.remove)
         self.update_task.clicked.connect(self.update_button)
         self.setWindowTitle("Todo list")
-
-    def search(self):
-        pass
+    def closeEvent(self, a0):
+        f = open("todo.txt","w")
+        self.string = ".".join(self.tasks)
+        if not self.string:
+            pass
+        else:
+            # print(self.string)
+            f.write(self.string)
+        # print(string)
+        f.close()
+        a0.accept()
+    def search(self,text):  # here text is already having the current text in lineEdit, since textchanged emits the changed text directly
+        if text:
+            res = process.extractOne(text, self.tasks)
+            if res:
+                string, score, index = res      # extractOne gives out a tuple will element,score,index so we are unpacking it here
+                if score > 0:
+                    self.task_list.setCurrentRow(index)
+            else:
+                pass
+        else:
+            pass
     
 
     def return_add_pressed_handle(self):
@@ -52,29 +83,29 @@ class todogui(QMainWindow):
     def update_button(self):
         try:
             self.task = self.task_list.currentItem().data(Qt.UserRole) 
-            print(self.task)
+            # print(self.task)
             if not self.task:
                 pass
             else: 
                 self.mode = "edit"
                 self.task_input.setText(self.task)
-                print("update_button")
+                # print("update_button")
                 # self.task_input.returnPressed.connect(self.put_new_task)
         except AttributeError:
             pass
         
     def put_new_task(self):
         try:
-            print("put new task")
+            # print("put new task")
             newTask=self.task_input.text()     
-            print(newTask)
-            print(self.task)         
+            # print(newTask)
+            # print(self.task)         
             for i in range (len(self.tasks)):
                 if self.tasks[i] == self.task:
-                    print(self.tasks)
+                    # print(self.tasks)
                     self.tasks[i]=newTask   # this is where the task list is changed Now I neeed to output this data with numbers along with other items
-                    print(i)
-                    print(self.tasks)
+                    # print(i)
+                    # print(self.tasks)
 
                     break
             self.update_list()
