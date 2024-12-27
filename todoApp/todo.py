@@ -25,8 +25,8 @@ class todogui(QMainWindow):
         super(todogui, self).__init__()
         uic.loadUi("todoFinal.ui", self)
         self.show()
-        # set placeholder text in Input
-    
+        
+        # load the previously saved tasks if there is any
         f = open("todo.txt","r")
         f.seek(0)
         self.string=f.read()
@@ -37,12 +37,14 @@ class todogui(QMainWindow):
             self.tasks = self.string.split(".")
             self.update_list()
 
-        
+        # disable all except add, input and list
         self.update_task.setDisabled(True)
         self.remove_task.setDisabled(True)
+        self.search_box.setDisabled(True)
+        # set placeholder text in Input and search
         self.task_input.setPlaceholderText("Create a task")
         self.search_box.setPlaceholderText("Search")
-        self.search_box.setDisabled(True)
+        
         self.search_box.textChanged.connect(self.search)
 
         self.add_task.clicked.connect(self.return_add_pressed_handle)
@@ -50,6 +52,8 @@ class todogui(QMainWindow):
         self.remove_task.clicked.connect(self.remove)
         self.update_task.clicked.connect(self.update_button)
         self.setWindowTitle("Todo list")
+
+    # when closing the app if the tasks list is not empty save the list in a file that will be loaded in the next app launch
     def closeEvent(self, a0):
         f = open("todo.txt","w")
         self.string = ".".join(self.tasks)
