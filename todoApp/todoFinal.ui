@@ -13,10 +13,20 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(54, 54, 54);</string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(38, 38, 38);
+</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
       <property name="spacing">
        <number>20</number>
       </property>
@@ -35,19 +45,76 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="styleSheet">
-         <string notr="true">
-font: 14pt &quot;Cantarell&quot;;</string>
+         <string notr="true">color: rgb(208, 208, 208);
+font: 14pt &quot;Noto Sans Mono&quot;;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt; font-weight:600; font-style:italic;&quot;&gt;TODO APP&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;TODO APP&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="margin">
+         <number>0</number>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="task_input"/>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="search_box">
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(54, 54, 54);</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="task_input">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(54, 54, 54);
+color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="add_task">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
          <string>ADD</string>
         </property>
@@ -73,7 +140,18 @@ font: 14pt &quot;Cantarell&quot;;</string>
        <number>20</number>
       </property>
       <item>
-       <widget class="QListWidget" name="task_list"/>
+       <widget class="QListWidget" name="task_list">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(54, 54, 54);
+color: rgb(255, 255, 255);
+</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -101,14 +179,28 @@ font: 14pt &quot;Cantarell&quot;;</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>40</width>
+          <width>417</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
       <item>
+       <widget class="QPushButton" name="update_task">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="remove_task">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
          <string>Remove</string>
         </property>
@@ -118,17 +210,6 @@ font: 14pt &quot;Cantarell&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>678</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
