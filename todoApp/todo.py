@@ -38,12 +38,13 @@ class todogui(QMainWindow):
             self.update_list()
 
         # disable all except add, input and list
-        self.update_task.setDisabled(True)
-        self.remove_task.setDisabled(True)
-        self.search_box.setDisabled(True)
+        # self.update_task.setDisabled(True)
+        # self.remove_task.setDisabled(True)
+        # self.search_box.setDisabled(True)
+        self.disable_widget()
         # set placeholder text in Input and search
-        self.task_input.setPlaceholderText("Create a task")
-        self.search_box.setPlaceholderText("Search")
+        self.task_input.setPlaceholderText(" Create a task")
+        self.search_box.setPlaceholderText(" Search")
         
         self.search_box.textChanged.connect(self.search)
 
@@ -71,11 +72,14 @@ class todogui(QMainWindow):
             if res:
                 string, score, index = res      # extractOne gives out a tuple will element,score,index so we are unpacking it here
                 if score > 0:
+                    print(score)
                     self.task_list.setCurrentRow(index)
+                else:
+                    self.task_list.clearSelection()
             else:
                 pass
         else:
-            pass
+            self.task_list.clearSelection()
     
 
     def return_add_pressed_handle(self):

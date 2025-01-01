@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>809</width>
+    <height>658</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>60</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>DejaVu Sans Mono</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Contact Book&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="search_box"/>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QTableView" name="table">
+        <property name="font">
+         <font>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_btn">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="add_btn">
+        <property name="text">
+         <string>New</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

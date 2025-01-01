@@ -18,7 +18,7 @@ class calcGUI(QMainWindow):
         self.setWindowTitle("Calculator")
         
         # set property for each button
-        self.btn0.setProperty("data","0")
+        self.btn0.setProperty("data","0")   # data = 0      ,property.("data")
         self.btn1.setProperty("data","1")
         self.btn2.setProperty("data","2")
         self.btn3.setProperty("data","3")
