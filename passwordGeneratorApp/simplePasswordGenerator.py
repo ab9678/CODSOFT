@@ -3,7 +3,6 @@ import random,string
 def main():
     uppercase=string.ascii_uppercase
     lowercase = string.ascii_lowercase
-    # numbers = "1234567890"
     numbers = string.digits
     special = "!@#$%^&*()_+-=[]{}|;:,.<>?/"
 
