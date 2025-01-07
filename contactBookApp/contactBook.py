@@ -19,7 +19,7 @@ class contactGUI(QMainWindow):
         self.setWindowTitle("Contact Book App")
 
         self.model = QStandardItemModel(0,2,self)
-        self.model.setHorizontalHeaderLabels(["Name","Phone"])
+        self.model.setHorizontalHeaderLabels(["Name","Phone","Email","Address"])
         self.table.setModel(self.model)
         self.show()
         self.add_btn.clicked.connect(self.add_empty_row)
@@ -42,6 +42,7 @@ class contactGUI(QMainWindow):
         if self.search_box.text():
 
             res = self.model.findItems(text,Qt.MatchContains)
+            print(res)
             if res:
                 row = res[0].row()
                 self.table.selectRow(row)
@@ -49,8 +50,11 @@ class contactGUI(QMainWindow):
             self.table.clearSelection()
 
 
+
     def add_empty_row(self):
         row = [
+            QStandardItem(""),
+            QStandardItem(""),
             QStandardItem(""),
             QStandardItem("")
         ]
