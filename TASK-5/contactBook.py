@@ -32,9 +32,9 @@ class contactGUI(QMainWindow):
         index = self.table.selectionModel().selectedIndexes()
         if index:
             selected_row = index[0].row()
-            print("hey")
+            # print("hey")
             
-            print("hey")
+            # print("hey")
             self.model.removeRow(selected_row)
 
 
@@ -42,7 +42,7 @@ class contactGUI(QMainWindow):
         if self.search_box.text():
 
             res = self.model.findItems(text,Qt.MatchContains)
-            print(res)
+            # print(res)
             if res:
                 row = res[0].row()
                 self.table.selectRow(row)

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(34, 34, 34);
+color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
@@ -62,7 +66,15 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLineEdit" name="search_box"/>
+       <widget class="QLineEdit" name="search_box">
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(57, 57, 57);
+color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -87,11 +99,30 @@
           <stylestrategy>PreferDefault</stylestrategy>
          </font>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(57, 57, 57);
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="dragDropMode">
+         <enum>QAbstractItemView::NoDragDrop</enum>
+        </property>
+        <property name="defaultDropAction">
+         <enum>Qt::IgnoreAction</enum>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::DotLine</enum>
+        </property>
         <property name="sortingEnabled">
          <bool>true</bool>
         </property>
         <attribute name="horizontalHeaderCascadingSectionResizes">
-         <bool>true</bool>
+         <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderStretchLastSection">
          <bool>true</bool>
